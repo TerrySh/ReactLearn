@@ -15,16 +15,16 @@ class Login extends React.Component { // eslint-disable-line react/prefer-statel
     cancelLogin: React.PropTypes.func.isRequired,
   }
 
-  state = {}
+  state = {};
+
   login = () => {
     const email = this.emailField.value();
-    if(!validator.validate(email))
-    {
-      this.setState({errorText: 'Please provide a valid email!'});
+    if (!validator.validate(email)) {
+      this.setState({ errorText: 'Please provide a valid email!' });
       return;
     }
 
-    this.setState({errorText: null});
+    this.setState({ errorText: null });
 
     this.props.login(email);
   }
@@ -39,7 +39,7 @@ class Login extends React.Component { // eslint-disable-line react/prefer-statel
           placeholder="Your email"
           ref={(f) => {this.emailField = f;}}
           errorText={this.state.errorText}
-          />
+        />
         <div className={styles.actionContainer}>
           <div className={styles.button} onClick={this.props.cancelLogin}>Cancel</div>
           <div className={styles.button} onClick={this.login}>Login</div>
