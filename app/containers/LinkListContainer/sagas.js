@@ -14,11 +14,11 @@ function* fetchLinks(action) {
   try {
     const links = yield call(fetchLinksFromServer, action.topicName);
 
-    //dispatch action to store links
+    // dispatch action to store links
     yield put(requestLinksSucceeded(links));
-    //console.log('LINKS FROM SERVER:', links);
+    // console.log('LINKS FROM SERVER:', links);
   } catch (e) {
-    //dispatch action to store error
+    // dispatch action to store error
     yield put(requestLinksFailed(e.message));
   }
 }

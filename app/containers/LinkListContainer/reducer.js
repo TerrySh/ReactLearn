@@ -9,10 +9,10 @@ import {
   REQUEST_LINKS_SUCCEEDED,
 } from './constants';
 
-import { ADD_LINK_SUCCESS} from "../LinkFormContainer/constants";
+import { ADD_LINK_SUCCESS } from '../LinkFormContainer/constants';
 
 const initialState = fromJS({
-  links: []
+  links: [],
 });
 
 function addLink(state, link) {
